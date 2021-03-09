@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cabin', sans-serif;
+}
+
+nav {
+    width: 100%;
+    height: 55px;
+    background-color: black;
+    padding-bottom: 1px;
+}
+
+
+.logo {
+    width: 119px;
+    position: absolute;
+    top: 6px;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.logo:hover {
+    background-color: dimgrey;
+}
+
+.plvardas {
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 140px;
+    display: inline-block;
+    position: relative;
+    bottom: 35px;
+}
+
+ul {
+    width: 100%;
+    text-align: right;
+    height: 50px;
+}
+
+li {
+    display: inline-block;
+    height: 60px;
+    width: 150px;
+}
+
+li > a, button {
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    height: 55px;
+    padding-top: 17px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+a {
+    transition: 0.3s;
+}
+
+li > a:hover{
+    background-color: dimgrey;
+}
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    transition: 0.3s;
+    display: inline-block;
+    height: 50px;
+    width: 150px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content > a {
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: dimgrey;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+  background-color: #008ee6;
+}
+
+.topnav {
+  display: none;
+}
+
+@media only screen and (max-width: 960px) {
+  .topnav {
+    display: block;
+  }
+    
+  .navpc
+    {
+        display: none;
+    }
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: black;
+  color: white;
+}
+
+
+.pradinish {
+    width: 100%;
+    height: 1000px;
+    background-image: url(Foto/header.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 1px;
+}
+
+
+
+.h1h {
+    font-size: 80px;
+    margin-top: 250px;
+    margin-left: 60px;
+}
+
+.h3h {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+.suzinokdaugiau {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    padding: 13px;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    opacity: 50%;
+    text-decoration: none;
+    margin-left: 60px;
+    margin-top: 50px;
+    display: inline-block;
+}
+
+.suzinokdaugiau:hover {
+    opacity: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 250px;
+    background-color: black;
+    opacity: 80%;
+    color: white;
+    padding: 2px;
+    text-align: center;
+}
+
+footer > p {
+    font-size: 25px;
+    margin-top: 100px;
+    margin-right: 200px;
+}
+
+
+.fas {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: ;
+    position: relative;
+    bottom: 15px;
+    margin-left: 10px;
+}
+
+.fas:hover {
+    opacity: 0.7;
+}
+
+.fas-facebook {
+    background-image: url(Logo/facebook.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 360px;
+    color: white;
+}
+
+.fas-insta {
+    background-image: url(Logo/instagram.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.fas-500px {
+    background-image: url(Logo/500Pxlogotipas.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+}

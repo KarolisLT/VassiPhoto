@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vassi Photo</title>
+    <link rel="icon" type="image/jpg" href="Logo/4725659646_46f7201a-4082-43f9-ae2e-c96d161fe158.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="kontaktaistyle.css" rel="stylesheet" type="text/css"> 
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" id="virsus">Pradžia</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">Galerija</button>
+                <div class="dropdown-content">
+                    <a href="vestuves.html">Vestuvės</a>
+                    <a href="krikstynos.html">Krikštynos</a>
+                    <a href="portretai.html">Portretai</a>
+                    <a href="fotografija.html">Fotografija</a>
+                </div>
+            </div>
+            <li><a href="#">Apie</a></li>
+            <li><a href="#">Kontaktai</a></li>
+        </ul>
+        <img src="Logo/VASSI%20phoography%20baltas%20juodam%20fone_%20(1).jpg" class="logo">
+        <h3 class="plvardas">Paulius Vasiliauskas</h3>
+    </nav>
+    <section>
+    <h1>Kontaktai</h1>
+  <div class="container">
+    <form action="https://formspree.io/f/xwkwdyak" method="POST" id="my-form">
+
+      <div class="form-group">
+        <label for="firstName"> Vardas</label>
+        <input type="text" id="firstName" name="firstName">
+      </div>
+
+      <div class="form-group">
+        <label for="latsName"> Pavardė</label>
+        <input type="text" id="lastName" name="lastName">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Tavo email adresas</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="massage">Žinutė</label>
+        <textarea name="massage" id="massage" cols="30" rows="10"></textarea>
+      </div>
+
+      <button type="submit">Siūsti</button>
+    </form>
+  </div>
+  <div id="status"></div>
+</section>
+    <script>
+    // Customize this 'myform.js' script and add it to your JS bundle.
+// Then import it with 'import MyForm from "./myform.js"'.
+// Finally, add a <MyForm/> element whereever you wish to display the form.
+
+import React from "react";
+
+export default class MyForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      status: ""
+    };
+  }
+
+  render() {
+    const { status } = this.state;
+    return (
+      <form
+        onSubmit={this.submitForm}
+        action="https://formspree.io/f/xwkwdyak"
+        method="POST"
+      >
+        <!-- add your custom form HTML here -->
+        <label>Email:</label>
+        <input type="email" name="email" />
+        <label>Message:</label>
+        <input type="text" name="message" />
+        {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
+        {status === "ERROR" && <p>Nepavyko išsiūsti žinutės...</p>}
+      </form>
+    );
+  }
+
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS" });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
+  }
+}
+    </script>
+    </body>
+</html>
